@@ -46,3 +46,14 @@ int main(void)
 	printf("%d\n", max);
 	return 0;
 }
+
+
+/* 実行結果
+10data01.txt 5
+10data02.txt 0
+10data03.txt 12
+10data04.txt データ数が4001になっている
+10data05.txt 719
+10data06.txt 3995
+10data07.txt データ数が4001になっている
+*/

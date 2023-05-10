@@ -45,9 +45,6 @@ int main(void)
 //  返り値： 素数 1 , 素数以外 0
 //----------------------------------------------
 int is_prime(int n){
-        if (n < 2) return 0;
-	else if (n == 2) return 1;
-	else if (n % 2 == 0) return 0;
 	double num = sqrt(n);
         for (int i = 3; i <= num; i+=2){
                 if (n % i == 0) return 0;
@@ -60,10 +57,14 @@ int is_prime(int n){
 int num_primes(int a, int b)
 {
 	int i, c=0;
-
+	
+	if (b < 2) return 0;
+	if (a < 2) a = 2;
+	c = (a <= 2 && b >= 2) ? 1 : 0;
+	if (a % 2 == 0) a++;	
 	// a～bが素数か調べる
-	for (i=a; i<=b; i++) {
-		if (is_prime(i)==1) c++;
+	for (i=a; i<=b; i+=2) {
+		c += is_prime(i);
 	}
 
 	return c;	// 素数の個数を返す
