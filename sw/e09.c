@@ -57,6 +57,7 @@ int is_prime(int n){
 int num_primes(int a, int b)
 {
 	int i, c=0;
+	double q;
 	
 	if (b < 2) return 0;
 	if (a < 2) a = 2;
@@ -64,6 +65,8 @@ int num_primes(int a, int b)
 	if (a % 2 == 0) a++;	
 	// a～bが素数か調べる
 	for (i=a; i<=b; i+=2) {
+		//q = sqrt(i);
+		//if (ceil(q) == q) continue;
 		c += is_prime(i);
 	}
 

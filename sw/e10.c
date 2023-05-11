@@ -25,7 +25,7 @@ int main(void)
 		printf("ファイルがありません\n");
 		return 1;
 	}
-	char s[4000], t[4000];
+	char s[4001], t[4001];
 	fscanf(fp, "%s%s", s, t);
 	fclose(fp);
 	int max = 0, tmp = 0, S = strlen(s), T = strlen(t);
@@ -35,10 +35,6 @@ int main(void)
 				tmp = judge(s, t, i, j);
 				if (tmp > max){
 					max = tmp;
-				}
-				if (max >= S/2){
-					printf("%d\n", max);
-					return 0;
 				}
 			}
 		}
@@ -52,8 +48,8 @@ int main(void)
 10data01.txt 5
 10data02.txt 0
 10data03.txt 12
-10data04.txt データ数が4001になっている
+10data04.txt 31
 10data05.txt 719
 10data06.txt 3995
-10data07.txt データ数が4001になっている
+10data07.txt 0
 */
