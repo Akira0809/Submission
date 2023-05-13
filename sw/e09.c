@@ -56,20 +56,19 @@ int is_prime(int n){
 //----------------------------------------------
 int num_primes(int a, int b)
 {
-	int i, c=0;
+	int i;
 	double q;
 	
 	if (b < 2) return 0;
 	if (a < 2) a = 2;
-	c = (a <= 2 && b >= 2) ? 1 : 0;
 	if (a % 2 == 0) a++;	
 	// a～bが素数か調べる
 	for (i=a; i<=b; i+=2) {
-		//q = sqrt(i);
-		//if (ceil(q) == q) continue;
-		c += is_prime(i);
+		if (is_prime(i) == 1) return 1;
 	}
-
-	return c;	// 素数の個数を返す
 }
 
+/* 実行結果
+1000000までの正数で定理は成立
+2.495026
+*/
